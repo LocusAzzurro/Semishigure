@@ -1,0 +1,21 @@
+package org.mineplugin.locusazzurro.semishigure;
+
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+
+public class CreativeTabs {
+
+    public static class CreativeTab extends CreativeModeTab {
+
+        private static final ItemStack ICON_ITEM = new ItemStack(Items.FIREWORK_STAR);
+
+        public CreativeTab() {
+            super(Semishigure.MOD_ID);
+        }
+        @Override
+        public ItemStack makeIcon() {
+            return ICON_ITEM;
+        }
+    }
+}
