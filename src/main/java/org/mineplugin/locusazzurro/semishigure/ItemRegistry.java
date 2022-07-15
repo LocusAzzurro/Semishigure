@@ -19,5 +19,9 @@ public class ItemRegistry {
             () -> new SummerMusicDisc(SummerMusicDisc.Track.HANBUNKO_HANABI));
     public static final RegistryObject<Item> MUSIC_DISC_5 = ITEMS.register("summer_disc_5",
             () -> new SummerMusicDisc(SummerMusicDisc.Track.SEMISHIGURE));
+    public static final RegistryObject<Item> TAIKO = ITEMS.register("taiko", Taiko::new);
+    public static final RegistryObject<Item> FLAME_ICARUSWINGS = ITEMS.register("flame_icaruswings", EasterEggItem::new);
+    public static final RegistryObject<Item> FLAME_PYROTECHNICRAFT = ITEMS.register("flame_pyrotechnicraft", EasterEggItem::new);
+    public static final RegistryObject<Item> FLAME_SEMISHIGURE = ITEMS.register("flame_semishigure", EasterEggItem::new);
 
 }
