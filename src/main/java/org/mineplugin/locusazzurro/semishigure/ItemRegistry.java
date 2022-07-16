@@ -1,6 +1,8 @@
 package org.mineplugin.locusazzurro.semishigure;
 
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -23,5 +25,9 @@ public class ItemRegistry {
     public static final RegistryObject<Item> FLAME_ICARUSWINGS = ITEMS.register("flame_icaruswings", EasterEggItem::new);
     public static final RegistryObject<Item> FLAME_PYROTECHNICRAFT = ITEMS.register("flame_pyrotechnicraft", EasterEggItem::new);
     public static final RegistryObject<Item> FLAME_SEMISHIGURE = ITEMS.register("flame_semishigure", EasterEggItem::new);
+    public static final RegistryObject<Item> TAIKO_BLOCK = fromBlock(BlockRegistry.TAIKO_BLOCK);
 
+    private static <B extends Block> RegistryObject<Item> fromBlock(RegistryObject<B> block) {
+        return ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(Semishigure.CREATIVE_TAB)));
+    }
 }

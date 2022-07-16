@@ -16,6 +16,7 @@ public class Semishigure {
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         ItemRegistry.ITEMS.register(bus);
+        BlockRegistry.BLOCKS.register(bus);
         SoundEventRegistry.SOUNDS.register(bus);
 
     }
