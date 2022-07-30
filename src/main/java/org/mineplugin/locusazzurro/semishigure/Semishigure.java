@@ -6,7 +6,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import static org.mineplugin.locusazzurro.semishigure.Semishigure.MOD_ID;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(MOD_ID)
 public class Semishigure {
 
@@ -18,6 +17,7 @@ public class Semishigure {
         ItemRegistry.ITEMS.register(bus);
         BlockRegistry.BLOCKS.register(bus);
         SoundEventRegistry.SOUNDS.register(bus);
+        ParticleTypeRegistry.PARTICLES.register(bus);
 
     }
 }

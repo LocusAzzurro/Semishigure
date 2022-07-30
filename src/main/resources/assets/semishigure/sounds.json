@@ -1,0 +1,75 @@
+{
+  "track.natsumatsuri": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "semishigure:track_natsumatsuri",
+        "stream": true
+      }
+    ]
+  },
+  "track.uchiage_hanabi": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "semishigure:track_uchiage_hanabi",
+        "stream": true
+      }
+    ]
+  },
+  "track.natsurembo": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "semishigure:track_natsurembo",
+        "stream": true
+      }
+    ]
+  },
+  "track.hanbunko_hanabi": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "semishigure:track_hanbunko_hanabi",
+        "stream": true
+      }
+    ]
+  },
+  "track.semishigure": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "semishigure:track_semishigure",
+        "stream": true
+      }
+    ]
+  },
+  "taiko.don": {
+    "subtitle": "subtitles.semishigure.taiko.don",
+    "replace": true,
+    "sounds": [
+      "semishigure:don"
+    ]
+  },
+  "taiko.don_big": {
+    "subtitle": "subtitles.semishigure.taiko.don_big",
+    "replace": true,
+    "sounds": [
+      "semishigure:don_big"
+    ]
+  },
+  "taiko.katsu": {
+    "subtitle": "subtitles.semishigure.taiko.katsu",
+    "replace": true,
+    "sounds": [
+      "semishigure:katsu"
+    ]
+  },
+  "taiko.katsu_big": {
+    "subtitle": "subtitles.semishigure.taiko.katsu_big",
+    "replace": true,
+    "sounds": [
+      "semishigure:katsu_big"
+    ]
+  }
+}

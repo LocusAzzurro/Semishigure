@@ -21,4 +21,13 @@ public class SoundEventRegistry {
     public static final RegistryObject<SoundEvent> TRACK_SEMISHIGURE = SOUNDS.register("track.semishigure",
             () -> new SoundEvent(new ResourceLocation(Semishigure.MOD_ID, "track.semishigure")));
 
+    public static final RegistryObject<SoundEvent> TAIKO_DON = SOUNDS.register("taiko.don",
+            () -> new SoundEvent(new ResourceLocation(Semishigure.MOD_ID, "taiko.don")));
+    public static final RegistryObject<SoundEvent> TAIKO_KATSU = SOUNDS.register("taiko.katsu",
+            () -> new SoundEvent(new ResourceLocation(Semishigure.MOD_ID, "taiko.katsu")));
+    public static final RegistryObject<SoundEvent> TAIKO_DON_BIG = SOUNDS.register("taiko.don_big",
+            () -> new SoundEvent(new ResourceLocation(Semishigure.MOD_ID, "taiko.don_big")));
+    public static final RegistryObject<SoundEvent> TAIKO_KATSU_BIG = SOUNDS.register("taiko.katsu_big",
+            () -> new SoundEvent(new ResourceLocation(Semishigure.MOD_ID, "taiko.katsu_big")));
+
 }

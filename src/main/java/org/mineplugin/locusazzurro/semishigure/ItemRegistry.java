@@ -22,9 +22,12 @@ public class ItemRegistry {
     public static final RegistryObject<Item> MUSIC_DISC_5 = ITEMS.register("summer_disc_5",
             () -> new SummerMusicDisc(SummerMusicDisc.Track.SEMISHIGURE));
     public static final RegistryObject<Item> TAIKO = ITEMS.register("taiko", Taiko::new);
-    public static final RegistryObject<Item> FLAME_ICARUSWINGS = ITEMS.register("flame_icaruswings", EasterEggItem::new);
-    public static final RegistryObject<Item> FLAME_PYROTECHNICRAFT = ITEMS.register("flame_pyrotechnicraft", EasterEggItem::new);
-    public static final RegistryObject<Item> FLAME_SEMISHIGURE = ITEMS.register("flame_semishigure", EasterEggItem::new);
+    public static final RegistryObject<Item> FLAME_ICARUSWINGS = ITEMS.register("flame_icaruswings",
+            () -> new EasterEggItem(EasterEggItem.ModID.ICARUSWINGS));
+    public static final RegistryObject<Item> FLAME_PYROTECHNICRAFT = ITEMS.register("flame_pyrotechnicraft",
+            () -> new EasterEggItem(EasterEggItem.ModID.PYROTECHNICRAFT));
+    public static final RegistryObject<Item> FLAME_SEMISHIGURE = ITEMS.register("flame_semishigure",
+            () -> new EasterEggItem(EasterEggItem.ModID.SEMISHIGURE));
     public static final RegistryObject<Item> TAIKO_BLOCK = fromBlock(BlockRegistry.TAIKO_BLOCK);
 
     private static <B extends Block> RegistryObject<Item> fromBlock(RegistryObject<B> block) {
