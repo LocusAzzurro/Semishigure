@@ -30,4 +30,7 @@ public class SoundEventRegistry {
     public static final RegistryObject<SoundEvent> TAIKO_KATSU_BIG = SOUNDS.register("taiko.katsu_big",
             () -> new SoundEvent(new ResourceLocation(Semishigure.MOD_ID, "taiko.katsu_big")));
 
+    public static final RegistryObject<SoundEvent> BACKROOM_AMBIENT = SOUNDS.register("ambient.backroom",
+            () -> new SoundEvent(new ResourceLocation(Semishigure.MOD_ID, "ambient.backroom")));
+
 }

@@ -71,5 +71,14 @@
     "sounds": [
       "semishigure:katsu_big"
     ]
+  },
+  "ambient.backroom": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "semishigure:ambient_backroom",
+        "stream": true
+      }
+    ]
   }
 }
