@@ -3,7 +3,6 @@ package org.mineplugin.locusazzurro.semishigure;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
@@ -13,11 +12,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+import net.minecraft.world.item.Item.Properties;
+
 public class EasterEggItem extends Item {
 
     private ModID ID;
     public EasterEggItem(ModID id) {
-        super(new Properties().tab(Semishigure.CREATIVE_TAB).stacksTo(1).rarity(Rarity.EPIC));
+        super(new Properties().stacksTo(1).rarity(Rarity.EPIC));
         this.ID = id;
     }
 
@@ -29,7 +30,7 @@ public class EasterEggItem extends Item {
             ModID id = flame.getID();
             switch (id) {
                 case ICARUSWINGS ->
-                        tooltip.add(new TextComponent(
+                        tooltip.add(Component.literal(
                                 """
                                         "Never regret thy fall,
                                         O Icarus of the fearless flight,
@@ -39,7 +40,7 @@ public class EasterEggItem extends Item {
                                         """)
                                 .setStyle(Style.EMPTY.withItalic(true).withColor(ChatFormatting.GRAY)));
                 case PYROTECHNICRAFT ->
-                        tooltip.add(new TextComponent(
+                        tooltip.add(Component.literal(
                                 """
                                         「夢に描いた一瞬を照らし出してよ 花火
                                         繋いだあなたのその手見失わないように

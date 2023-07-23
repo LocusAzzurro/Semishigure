@@ -10,12 +10,12 @@ import static org.mineplugin.locusazzurro.semishigure.Semishigure.MOD_ID;
 public class Semishigure {
 
     public static final String MOD_ID = "semishigure";
-    public static final CreativeTabs.CreativeTab CREATIVE_TAB = new CreativeTabs.CreativeTab();
     public Semishigure() {
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         ItemRegistry.ITEMS.register(bus);
         BlockRegistry.BLOCKS.register(bus);
+        CreativeTabRegistry.CREATIVE_TABS.register(bus);
         SoundEventRegistry.SOUNDS.register(bus);
         ParticleTypeRegistry.PARTICLES.register(bus);
 

@@ -11,13 +11,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
+
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 
 public class TaikoBlock extends Block {
 
     public TaikoBlock() {
-        super(Properties.of(Material.WOOD).sound(SoundType.WOOD).strength(1.5f));
+        super(Properties.of().sound(SoundType.WOOD).strength(1.5f));
     }
 
     private void playDonNote(Level level, BlockPos pos, boolean big) {

@@ -12,7 +12,7 @@ import net.minecraft.world.level.Level;
 public class Taiko extends Item{
 
     public Taiko() {
-        super(new Item.Properties().tab(Semishigure.CREATIVE_TAB).stacksTo(1).rarity(Rarity.UNCOMMON));
+        super(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON));
     }
 
     @Override
