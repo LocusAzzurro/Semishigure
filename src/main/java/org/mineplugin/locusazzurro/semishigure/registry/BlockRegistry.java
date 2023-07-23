@@ -1,10 +1,11 @@
-package org.mineplugin.locusazzurro.semishigure;
+package org.mineplugin.locusazzurro.semishigure.registry;
 
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.mineplugin.locusazzurro.semishigure.Semishigure;
+import org.mineplugin.locusazzurro.semishigure.summerfestival.TaikoBlock;
 
 public class BlockRegistry {
 

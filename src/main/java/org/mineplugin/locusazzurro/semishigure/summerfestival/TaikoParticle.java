@@ -1,4 +1,4 @@
-package org.mineplugin.locusazzurro.semishigure;
+package org.mineplugin.locusazzurro.semishigure.summerfestival;
 
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;

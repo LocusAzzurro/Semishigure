@@ -1,4 +1,4 @@
-package org.mineplugin.locusazzurro.semishigure;
+package org.mineplugin.locusazzurro.semishigure.summerfestival;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.function.Supplier;
 import java.time.Duration;
 
-import net.minecraft.world.item.Item.Properties;
+import org.mineplugin.locusazzurro.semishigure.registry.SoundEventRegistry;
 
 public class SummerMusicDisc extends RecordItem {
 

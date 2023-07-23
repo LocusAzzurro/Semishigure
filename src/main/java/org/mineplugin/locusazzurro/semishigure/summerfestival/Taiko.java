@@ -1,4 +1,4 @@
-package org.mineplugin.locusazzurro.semishigure;
+package org.mineplugin.locusazzurro.semishigure.summerfestival;
 
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -8,6 +8,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
+import org.mineplugin.locusazzurro.semishigure.registry.ParticleTypeRegistry;
+import org.mineplugin.locusazzurro.semishigure.registry.SoundEventRegistry;
 
 public class Taiko extends Item{
 

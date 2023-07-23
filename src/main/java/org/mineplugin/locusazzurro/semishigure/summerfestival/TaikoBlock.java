@@ -1,9 +1,7 @@
-package org.mineplugin.locusazzurro.semishigure;
+package org.mineplugin.locusazzurro.semishigure.summerfestival;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -13,7 +11,8 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
-import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import org.mineplugin.locusazzurro.semishigure.registry.ParticleTypeRegistry;
+import org.mineplugin.locusazzurro.semishigure.registry.SoundEventRegistry;
 
 public class TaikoBlock extends Block {
 

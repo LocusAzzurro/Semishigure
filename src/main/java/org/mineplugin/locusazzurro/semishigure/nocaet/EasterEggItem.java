@@ -1,4 +1,4 @@
-package org.mineplugin.locusazzurro.semishigure;
+package org.mineplugin.locusazzurro.semishigure.nocaet;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -29,7 +29,7 @@ public class EasterEggItem extends Item {
             Softly, the petals rain down into the future we both spend together"
             - Natsukoi Hanabi
             """;
-    private final ModID ID;
+    public final ModID ID;
     public EasterEggItem(ModID id) {
         super(new Properties().stacksTo(1).rarity(Rarity.EPIC));
         this.ID = id;
@@ -54,7 +54,7 @@ public class EasterEggItem extends Item {
     public ModID getID(){
         return ID;
     }
-    enum ModID {
+    public enum ModID {
         ICARUSWINGS, PYROTECHNICRAFT, SEMISHIGURE
     }
 }

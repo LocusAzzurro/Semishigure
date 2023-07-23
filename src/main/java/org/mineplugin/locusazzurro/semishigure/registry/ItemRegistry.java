@@ -1,4 +1,4 @@
-package org.mineplugin.locusazzurro.semishigure;
+package org.mineplugin.locusazzurro.semishigure.registry;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -6,6 +6,11 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.mineplugin.locusazzurro.semishigure.chargedrifle.ChargeRifleItem;
+import org.mineplugin.locusazzurro.semishigure.nocaet.EasterEggItem;
+import org.mineplugin.locusazzurro.semishigure.Semishigure;
+import org.mineplugin.locusazzurro.semishigure.summerfestival.SummerMusicDisc;
+import org.mineplugin.locusazzurro.semishigure.summerfestival.Taiko;
 
 public class ItemRegistry {
 
@@ -29,6 +34,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> FLAME_SEMISHIGURE = ITEMS.register("flame_semishigure",
             () -> new EasterEggItem(EasterEggItem.ModID.SEMISHIGURE));
     public static final RegistryObject<Item> TAIKO_BLOCK = fromBlock(BlockRegistry.TAIKO_BLOCK);
+    public static final RegistryObject<Item> CHARGE_RIFLE = ITEMS.register("charge_rifle", ChargeRifleItem::new);
 
     private static <B extends Block> RegistryObject<Item> fromBlock(RegistryObject<B> block) {
         return ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
