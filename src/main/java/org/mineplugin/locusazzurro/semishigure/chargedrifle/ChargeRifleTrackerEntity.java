@@ -25,6 +25,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.mineplugin.locusazzurro.semishigure.registry.EntityTypeRegistry;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
 import java.util.UUID;
@@ -75,7 +76,11 @@ public class ChargeRifleTrackerEntity extends Entity {
                             originPos.y + direction.y * i,
                             originPos.z + direction.z * i
                     );
-                    ((ServerLevel) level()).sendParticles((ServerPlayer) attachedTo, ParticleTypes.ELECTRIC_SPARK, true,  particlePos.x, particlePos.y, particlePos.z, 1, 0.0, 0.0, 0.0, 0.0);
+                    List<ServerPlayer> players = ((ServerLevel) level()).players();
+                    for (ServerPlayer serverplayer : players) {
+                        ((ServerLevel) level()).sendParticles(serverplayer, ParticleTypes.ELECTRIC_SPARK, true,  particlePos.x, particlePos.y, particlePos.z, 1, 0.0, 0.0, 0.0, 0.0);
+                    }
+                    //((ServerLevel) level()).sendParticles((ServerPlayer) attachedTo, ParticleTypes.ELECTRIC_SPARK, true,  particlePos.x, particlePos.y, particlePos.z, 1, 0.0, 0.0, 0.0, 0.0);
                     //((ServerLevel) level()).sendParticles(ParticleTypes.ELECTRIC_SPARK, particlePos.x, particlePos.y, particlePos.z, 1, 0.0, 0.0, 0.0, 0.0);
                 }
                 result.getRight().ifPresent(target -> target.hurt(level().damageSources().mobAttack(attachedTo), 1));
@@ -100,7 +105,11 @@ public class ChargeRifleTrackerEntity extends Entity {
                             originPos.y + direction.y * i,
                             originPos.z + direction.z * i
                     );
-                    ((ServerLevel) level()).sendParticles((ServerPlayer) attachedTo, ParticleTypes.END_ROD, true,  particlePos.x, particlePos.y, particlePos.z, 1, 0.0, 0.0, 0.0, 0.0);
+                    List<ServerPlayer> players = ((ServerLevel) level()).players();
+                    for (ServerPlayer serverplayer : players) {
+                        ((ServerLevel) level()).sendParticles(serverplayer, ParticleTypes.END_ROD, true, particlePos.x, particlePos.y, particlePos.z, 1, 0.0, 0.0, 0.0, 0.0);
+                    }
+                    //((ServerLevel) level()).sendParticles((ServerPlayer) attachedTo, ParticleTypes.END_ROD, true,  particlePos.x, particlePos.y, particlePos.z, 1, 0.0, 0.0, 0.0, 0.0);
                     //((ServerLevel) level()).sendParticles(ParticleTypes.END_ROD, particlePos.x, particlePos.y, particlePos.z, 1, 0.0, 0.0, 0.0, 0.0);
                 }
                 result.getRight().ifPresent(target -> {
