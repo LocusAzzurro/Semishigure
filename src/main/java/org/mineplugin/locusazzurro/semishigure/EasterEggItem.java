@@ -12,11 +12,24 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-import net.minecraft.world.item.Item.Properties;
 
 public class EasterEggItem extends Item {
 
-    private ModID ID;
+    public static final String ICARUS_TEXT = """
+            "Never regret thy fall,
+            O Icarus of the fearless flight,
+            For the greatest tragedy of them all,
+            Is never to feel the burning light."
+            - Oscar Wilde
+            """;
+    public static final String FIREWORK_TEXT = """
+            "Fireworks, please shine on the moment I've drawn in my dreams
+            So that I won't be separated from your hand
+            I muttered with a voice nobody could hear: 'Please don't disappear'
+            Softly, the petals rain down into the future we both spend together"
+            - Natsukoi Hanabi
+            """;
+    private final ModID ID;
     public EasterEggItem(ModID id) {
         super(new Properties().stacksTo(1).rarity(Rarity.EPIC));
         this.ID = id;
@@ -30,25 +43,9 @@ public class EasterEggItem extends Item {
             ModID id = flame.getID();
             switch (id) {
                 case ICARUSWINGS ->
-                        tooltip.add(Component.literal(
-                                """
-                                        "Never regret thy fall,
-                                        O Icarus of the fearless flight,
-                                        For the greatest tragedy of them all,
-                                        Is never to feel the burning light."
-                                        - Oscar Wilde
-                                        """)
-                                .setStyle(Style.EMPTY.withItalic(true).withColor(ChatFormatting.GRAY)));
+                        tooltip.add(Component.literal(ICARUS_TEXT).setStyle(Style.EMPTY.withItalic(true).withColor(ChatFormatting.GRAY)));
                 case PYROTECHNICRAFT ->
-                        tooltip.add(Component.literal(
-                                """
-                                        「夢に描いた一瞬を照らし出してよ 花火
-                                        繋いだあなたのその手見失わないように
-                                        誰にも聞こえぬ声で呟いた『消えないで』
-                                        そっと、ふたりが過ごす未来に降り注ぐ花びら」
-                                        - 夏恋花火
-                                        """)
-                                .withStyle(ChatFormatting.LIGHT_PURPLE));
+                        tooltip.add(Component.literal(FIREWORK_TEXT).withStyle(ChatFormatting.LIGHT_PURPLE));
                 case SEMISHIGURE -> {}
             }
         }
@@ -58,6 +55,6 @@ public class EasterEggItem extends Item {
         return ID;
     }
     enum ModID {
-        ICARUSWINGS, PYROTECHNICRAFT, SEMISHIGURE;
+        ICARUSWINGS, PYROTECHNICRAFT, SEMISHIGURE
     }
 }
