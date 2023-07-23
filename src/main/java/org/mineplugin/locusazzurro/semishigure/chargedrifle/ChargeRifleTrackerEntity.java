@@ -176,7 +176,7 @@ public class ChargeRifleTrackerEntity extends Entity {
                 Vec3 center = aabb.getCenter();
                 target = level.getEntitiesOfClass(LivingEntity.class, aabb).stream().filter(entity -> entity != origin).findFirst();
                 if (target.isPresent()) {
-                    return Pair.of(target.get().position(), target);
+                    return Pair.of(center, target);
                 }
                 if (!level.getBlockState(new BlockPos((int) center.x(), (int) center.y(), (int) center.z())).isAir()) {
                     return Pair.of(center, target);
