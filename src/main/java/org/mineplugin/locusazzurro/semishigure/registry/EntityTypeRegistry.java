@@ -7,7 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.mineplugin.locusazzurro.semishigure.Semishigure;
-import org.mineplugin.locusazzurro.semishigure.chargedrifle.ChargeRifleTrackerEntity;
+import org.mineplugin.locusazzurro.semishigure.chargerifle.ChargeRifleTrackerEntity;
 
 import java.util.function.Supplier;
 

@@ -1,5 +1,6 @@
-package org.mineplugin.locusazzurro.semishigure.chargedrifle;
+package org.mineplugin.locusazzurro.semishigure.chargerifle;
 
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -8,6 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ProjectileWeaponItem;
 import net.minecraft.world.level.Level;
+import org.mineplugin.locusazzurro.semishigure.registry.ItemRegistry;
 
 import java.util.function.Predicate;
 
@@ -20,8 +22,9 @@ public class ChargeRifleItem extends ProjectileWeaponItem {
     public InteractionResultHolder<ItemStack> use(Level worldIn, Player playerIn, InteractionHand handIn){
         ItemStack itemstack = playerIn.getItemInHand(handIn);
         ItemStack ammo = playerIn.getProjectile(itemstack);
+        boolean unbreakable = itemstack.hasTag() && itemstack.getTag().getBoolean("Unbreakable");
 
-        if (!playerIn.isCreative() && ammo.isEmpty()){
+        if (!playerIn.isCreative() && ammo.isEmpty() && !unbreakable){
             return InteractionResultHolder.pass(itemstack);
         }
 
@@ -29,18 +32,16 @@ public class ChargeRifleItem extends ProjectileWeaponItem {
         worldIn.addFreshEntity(tracker);
 
         if (!worldIn.isClientSide()) {
-            itemstack.hurtAndBreak(1, playerIn, (player) -> {
-                player.broadcastBreakEvent(playerIn.getUsedItemHand());
-            });
+            if (!(playerIn.isCreative() || unbreakable)) {
+                ammo.hurtAndBreak(1, playerIn, player -> {});
+                if (ammo.isEmpty()) {
+                    playerIn.getInventory().removeItem(ammo);
+                }
+            }
+            playerIn.getCooldowns().addCooldown(this, 20);
         }
 
-        if (!playerIn.isCreative()) {
-            ammo.shrink(1);
-            if (ammo.isEmpty()) {
-                playerIn.getInventory().removeItem(ammo);
-            }
-            playerIn.getCooldowns().addCooldown(this, 80);
-        }
+
 
         playerIn.awardStat(Stats.ITEM_USED.get(this));
         return InteractionResultHolder.sidedSuccess(itemstack, worldIn.isClientSide());
@@ -48,7 +49,7 @@ public class ChargeRifleItem extends ProjectileWeaponItem {
 
     @Override
     public Predicate<ItemStack> getAllSupportedProjectiles() {
-        return i -> i.is(Items.IRON_NUGGET);
+        return i -> i.is(ItemRegistry.SNIPER_AMMO.get());
     }
 
     @Override
