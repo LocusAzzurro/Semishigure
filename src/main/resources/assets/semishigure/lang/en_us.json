@@ -9,7 +9,11 @@
   "item.semishigure.flame_pyrotechnicraft": "Summer Love Firework",
   "item.semishigure.flame_semishigure": "The Embers of Love",
   "item.semishigure.taiko": "Taiko",
+  "item.semishigure.charge_rifle": "Charge Rifle",
+  "item.semishigure.sniper_ammo": "Sniper Ammo",
   "block.semishigure.taiko_block": "Taiko Block",
+
+  "death.attack.charge_rifle": "%1$s was shot by %2$s with Charge Rifle",
 
   "subtitles.semishigure.taiko.don": "Don",
   "subtitles.semishigure.taiko.don_big": "Don!",

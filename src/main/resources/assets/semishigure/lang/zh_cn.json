@@ -9,7 +9,11 @@
   "item.semishigure.flame_pyrotechnicraft": "夏恋花火",
   "item.semishigure.flame_semishigure": "恋の埋火",
   "item.semishigure.taiko": "太鼓",
+  "item.semishigure.charge_rifle": "充能步枪",
+  "item.semishigure.sniper_ammo": "狙击弹药",
   "block.semishigure.taiko_block": "太鼓方块",
+
+  "death.attack.charge_rifle": "%1$s被%2$s滋死了",
 
   "subtitles.semishigure.taiko.don": "咚",
   "subtitles.semishigure.taiko.don_big": "咚！",

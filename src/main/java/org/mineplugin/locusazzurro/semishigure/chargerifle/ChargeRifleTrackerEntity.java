@@ -1,7 +1,8 @@
-package org.mineplugin.locusazzurro.semishigure.chargedrifle;
+package org.mineplugin.locusazzurro.semishigure.chargerifle;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
@@ -12,7 +13,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.Mth;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -22,6 +23,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.NetworkHooks;
 import org.apache.commons.lang3.tuple.Pair;
+import org.mineplugin.locusazzurro.semishigure.registry.DamageTypeRegistry;
 import org.mineplugin.locusazzurro.semishigure.registry.EntityTypeRegistry;
 
 import javax.annotation.Nullable;
@@ -29,8 +31,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
 import java.util.UUID;
-import java.util.function.Consumer;
-import java.util.function.Predicate;
 
 public class ChargeRifleTrackerEntity extends Entity {
 
@@ -83,7 +83,9 @@ public class ChargeRifleTrackerEntity extends Entity {
                     //((ServerLevel) level()).sendParticles((ServerPlayer) attachedTo, ParticleTypes.ELECTRIC_SPARK, true,  particlePos.x, particlePos.y, particlePos.z, 1, 0.0, 0.0, 0.0, 0.0);
                     //((ServerLevel) level()).sendParticles(ParticleTypes.ELECTRIC_SPARK, particlePos.x, particlePos.y, particlePos.z, 1, 0.0, 0.0, 0.0, 0.0);
                 }
-                result.getRight().ifPresent(target -> target.hurt(level().damageSources().mobAttack(attachedTo), 1));
+                DamageSource damagesource = new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE)
+                        .getHolderOrThrow(DamageTypeRegistry.CHARGE_RIFLE), this.getAttachedTo() != null ? this.getAttachedTo() : this);
+                result.getRight().ifPresent(target -> target.hurt(damagesource, 1));
             }
             level().playSound(null, originPos.x, originPos.y, originPos.z, SoundEvents.FIRE_EXTINGUISH, SoundSource.PLAYERS, 2.0f, 1.0f);
         }
@@ -113,7 +115,9 @@ public class ChargeRifleTrackerEntity extends Entity {
                     //((ServerLevel) level()).sendParticles(ParticleTypes.END_ROD, particlePos.x, particlePos.y, particlePos.z, 1, 0.0, 0.0, 0.0, 0.0);
                 }
                 result.getRight().ifPresent(target -> {
-                    target.hurt(level().damageSources().mobAttack(attachedTo), 10);
+                    DamageSource damagesource = new DamageSource(this.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE)
+                            .getHolderOrThrow(DamageTypeRegistry.CHARGE_RIFLE), this.getAttachedTo() != null ? this.getAttachedTo() : this);
+                    target.hurt(damagesource, 10);
                     for (int i = 0; i < 10; i++) {
                         ((ServerLevel) level()).sendParticles(ParticleTypes.SMOKE, target.position().x, target.position().y + 0.5, target.position().z, 1, 0.0, 0.0, 0.0, 0.0);
                     }
@@ -170,7 +174,7 @@ public class ChargeRifleTrackerEntity extends Entity {
         Level level = origin.level();
         double hS = 0.2d;
         double stepDist = 0.2d;
-        int steps = 1000;
+        int steps = 500;
         AABB aabb = new AABB(eyePos.add(hS, hS, hS), eyePos.add(-hS, -hS, -hS));
         for (int i = 0; i < steps; i++) {
                 Vec3 center = aabb.getCenter();
