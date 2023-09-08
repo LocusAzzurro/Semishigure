@@ -1,0 +1,10 @@
+{
+  "loader": "forge:obj",
+  "flip_v": true,
+  "model": "semishigure:models/block/opera_figure.obj",
+  "render_type": "cutout",
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "minecraft:block/diamond_block"
+  }
+}
